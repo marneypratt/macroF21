@@ -1,0 +1,239 @@
+This “syca_metadata” file was most recently updated on 2021-04-07 by Marney Pratt
+
+
+-------------------
+GENERAL INFORMATION
+-------------------
+
+Data were downloaded from NEON
+
+Sycamore Creek (SYCA) data see: https://www.neonscience.org/field-sites/syca
+
+Macroinvertebrate Data see: https://data.neonscience.org/data-products/DP1.20120.001
+
+Water Quality (pH, DO, turbidity) Data see: https://data.neonscience.org/data-products/DP1.20288.001
+
+Water Temperature Data see: https://data.neonscience.org/data-products/DP1.20053.001
+
+Air Temperature Data see: https://data.neonscience.org/data-products/DP1.00002.001
+
+
+-----------------------------------------
+DATA-SPECIFIC INFORMATION FOR: syca.macro.waterQ.csv
+-----------------------------------------
+
+
+1. Variable List
+
+siteID: Identification of the sampling river.  SYCA = Sycamore Creek
+
+date: sampling date in mm/dd/yyyy format 
+	dates are all given in month/day/year (mm/dd/yyyy) format in the .csv file but usually given as yyyy-mm-dd when imported in R
+
+year: sampling year
+
+startTime.UTC: the time in hours:minutes:seconds in the Universal Time Coordinated (UTC) time zone that sampling was started
+
+season: sampling season (Spring, Summer or Fall)
+
+sampleTime: sampling time. Each sampling time is a combition of the season and year, for example Fall 2018 or Summer 2019
+
+habitatType: the type of habitat - which is riffle, pool, or run 
+
+samplerType: the type of sampler used to take the sample, 
+	see more information from NEON.DOC.003046vE 	(https://data.neonscience.org/api/v0/documents/NEON.DOC.003046vE)
+
+		
+	surber - "Surber sampler: Benthic sampler for flowing waters. A standard Surber sampler consists of a 30 cm x 30 cm frame and a long 243 mm Nitex mesh net that collects organisms (Figure 19)." 
+
+	core - "Hand corer: Benthic sampler for sand- and silt-bottomed streams (Figure 24). Sampler consists of an inner PVC tube and an outer, stainless steel housing for pushing the corer into the substratum. The stainless steel barrel is 5 cm in diameter by 50 cm high with a handle on top."
+
+
+sampleID: unique identification code for each sample.
+	
+
+organism_aggr: the unique name for each organism aggregated for some organisms.	
+	Some species are aggregated into a genus (especially a lot of the mayflies, stoneflies, and caddisflies), family (midges), or class (segmented worms)
+
+acceptedTaxonID: the identification code for each taxon taken from NEON (https://data.neonscience.org/taxonomic-lists)
+
+number: number of organisms of that type for that sample on that day
+
+
+benthicArea: benthic area in meters squared. Calculated as the area of a 0.25 meter squared quadrat times the number of quadrats.
+
+invDens: invertebrate density in number per meter squared. Calculated as the number of a particular organism divided by the benthic area that the organism was sampled in.
+
+acceptedTaxonID: this is a unique identification code for each taxon based on codes from NEON: 
+	https://data.neonscience.org/data-api/endpoints/taxonomy/
+
+tolerance: tolerance for the organism of that type
+	The tolerance is the tolerance to organic pollution used to calculate the Hilsenhof Biotic Index.  Most tolerance values used were
+	taken from the following resources
+	
+	Stream Biomonitoring Unit Staff.  2012. Standard operating Procedure: Biological monitoring of surface waters in New York State.  
+	New York State Department of Environmental Conservation Division of Water.  Albany, NY.
+	
+	Aquatic Bioassessment Laboratory. 2003. List of California macroinvertebrate taxa and standard taxonomic effort. 
+	California Department of Fish and Game. Rancho Cordova, CA.
+	https://www.safit.org/Docs/CABW_std_taxonomic_effort.pdf
+
+FFG: Primary functional feeding group of that organism
+
+	cf - filtering collector 	dominant food: filter feeders or suspension feeders that eat decomposing fine particular matter (FPOM) 
+	cg - gathering collector 	dominant food: gathers or deposit feeds on decomposing fine particular matter (FPOM) (includes surface film feeders)
+	om - omnivore dominant food: eats a variety of things including plant, animal, and detritus	
+	prc - piercer  dominant food: eats by piercing its prey.  
+	prd - predator	dominant food: eats living animal tissue.  Often ingests whole or part of another animal
+	scr - scraper	 dominant food: scrapes periphyton of surfaces (periphyton = algae and associated material attached to rocks and other substrata)
+	sh - shredders 	dominant food: herbivore variety chew and mines live plant material, detritivore variety chews, bores, or gouges decomposing vascular plant 	tissue including wood (course particulate organic matter = CPOM)
+
+wTemp.5min.mean: mean surface water temperature in Celsius over 5 minute increment
+
+	Measured with Thermometrics Platinum Resistance Temperature Detector (Class B) (±0.3°C)
+	see https://data.neonscience.org/data-products/DP1.20053.001 for more information
+
+
+wTemp.5min.min: minimum surface water temperature in Celsius over 5 minute increment
+
+	Measured with Thermometrics Platinum Resistance Temperature Detector (Class B) (±0.3°C)
+	see https://data.neonscience.org/data-products/DP1.20053.001 for more information
+
+wTemp.5min.max: maximum surface water temperature in Celsius over 5 minute increment
+
+	Measured with Thermometrics Platinum Resistance Temperature Detector (Class B) (±0.3°C)
+	see https://data.neonscience.org/data-products/DP1.20053.001 for more information
+
+pH: the pH 
+
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO pH sensor was used to continuously record pH (see https://www.ysi.com/product/id-599702/exo-ph-smart-sensor for accuracy)
+
+DO: Dissolved oxygen was measured in milligrams of oxygen per liter 
+	
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO dissolved oxygen sensor was used to continuously record DO 
+	(see https://www.ysi.com/product/id-599100-01/exo-optical-dissolved-oxygen-smart-sensor for accuracy)
+
+turb: Turbidity 
+	
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO turbiditysensor was used to continuously record turbidity in Formazin Nephelometric Units (FNU)
+	860 nm light detected at 90 degree angle
+	(see https://www.ysi.com/product/id-599101-01/exo-turbidity-smart-sensor for accuracy)
+
+      
+
+2. Missing data codes:
+        Code/symbol     Definition
+	NA        	Not Available
+        
+3. Specialized formats of other abbreviations used
+dates are all given in month/day/year (mm/dd/yyyy) format in the .csv file but usually given as yyyy-mm-dd when imported in R
+
+
+
+-----------------------------------------
+DATA-SPECIFIC INFORMATION FOR: syca.abiotic.daily.csv
+-----------------------------------------
+
+
+1. Variable List
+
+siteID: Identification of the sampling river.  SYCA = Sycamore Creek
+
+date: sampling date in mm/dd/yyyy format 
+	dates are all given in month/day/year (mm/dd/yyyy) format in the .csv file but usually given as yyyy-mm-dd when imported in R
+
+mean.wTemp: mean daily surface water temperature in Celsius 
+
+	Measured with Thermometrics Platinum Resistance Temperature Detector (Class B) (±0.3°C)
+	Average value for 24 hour period.
+	see https://data.neonscience.org/data-products/DP1.20053.001 for more information
+
+max.wTemp: maximum daily surface water temperature in Celsius 
+
+	Measured with Thermometrics Platinum Resistance Temperature Detector (Class B) (±0.3°C)
+	Maximum value for 24 hour period.
+	see https://data.neonscience.org/data-products/DP1.20053.001 for more information
+
+
+min.wTemp: minimum daily surface water temperature in Celsius 
+
+	Measured with Thermometrics Platinum Resistance Temperature Detector (Class B) (±0.3°C)
+	Minimumvalue for 24 hour period.
+	see https://data.neonscience.org/data-products/DP1.20053.001 for more information
+
+
+mean.aTemp: mean daily air temperature in Celsius 
+
+	Single Aspirated Air Temperature (SAAT) assembly located on the aquatic met station 3m above ground level.
+	Thermometrics Climate RTD 100 Ω Probe, housed within a Met One 076B fan aspirated radiation shield (±0.3°C)
+	Average value for 24 hour period.
+	see https://data.neonscience.org/data-products/DP1.00002.001
+
+
+min.aTemp: minimum daily air temperature in Celsius 
+
+	Single Aspirated Air Temperature (SAAT) assembly located on the aquatic met station 3m above ground level.
+	Thermometrics Climate RTD 100 Ω Probe, housed within a Met One 076B fan aspirated radiation shield (±0.3°C)
+	Minimum value for 24 hour period.
+	see https://data.neonscience.org/data-products/DP1.00002.001
+
+max.aTemp: maximum daily air temperature in Celsius 
+
+	Single Aspirated Air Temperature (SAAT) assembly located on the aquatic met station 3m above ground level.
+	Thermometrics Climate RTD 100 Ω Probe, housed within a Met One 076B fan aspirated radiation shield (±0.3°C)
+	Maximum value for 24 hour period.
+	see https://data.neonscience.org/data-products/DP1.00002.001
+
+mean.DO: mean daily dissolved oxygen was measured in milligrams of oxygen per liter 
+	
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO dissolved oxygen sensor was used to continuously record DO 
+	(see https://www.ysi.com/product/id-599100-01/exo-optical-dissolved-oxygen-smart-sensor for accuracy)
+	Average value for 24 hour period.
+
+max.DO: maximum daily dissolved oxygen was measured in milligrams of oxygen per liter 
+	
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO dissolved oxygen sensor was used to continuously record DO 
+	(see https://www.ysi.com/product/id-599100-01/exo-optical-dissolved-oxygen-smart-sensor for accuracy)
+	Maximum value for 24 hour period.
+
+mean.pH: mean daily pH 
+
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO pH sensor was used to continuously record pH (see https://www.ysi.com/product/id-599702/exo-ph-smart-sensor for accuracy)
+	Average value for 24 hour period.
+
+max.pH: maximum daily pH 
+
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO pH sensor was used to continuously record pH (see https://www.ysi.com/product/id-599702/exo-ph-smart-sensor for accuracy)
+	Maximum value for 24 hour period.
+
+mean.turb: mean daily turbidity in Formazin Nephelometric Units (FNU)
+	
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO turbiditysensor was used to continuously record turbidity in Formazin Nephelometric Units (FNU)
+	860 nm light detected at 90 degree angle
+	(see https://www.ysi.com/product/id-599101-01/exo-turbidity-smart-sensor for accuracy)
+	Average value for 24 hour period.
+
+
+max.turb: maximum daily turbidity in Formazin Nephelometric Units (FNU)
+	
+	See https://data.neonscience.org/data-products/DP1.20288.001 for more information
+	YSI EXO turbiditysensor was used to continuously record turbidity in Formazin Nephelometric Units (FNU)
+	860 nm light detected at 90 degree angle
+	(see https://www.ysi.com/product/id-599101-01/exo-turbidity-smart-sensor for accuracy)
+	Maximum value for 24 hour period.
+    
+
+2. Missing data codes:
+        Code/symbol     Definition
+	NA        	Not Available
+        
+3. Specialized formats of other abbreviations used
+dates are all given in month/day/year (mm/dd/yyyy) format in the .csv file but usually given as yyyy-mm-dd when imported in R

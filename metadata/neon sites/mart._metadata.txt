@@ -1,0 +1,106 @@
+This “mart_metadata” file was most recently updated on 2021-04-07 by Marney Pratt
+
+
+-------------------
+GENERAL INFORMATION
+-------------------
+
+Data were downloaded from NEON
+
+Martha Creek (MART) data see: https://www.neonscience.org/field-sites/mart
+
+Macroinvertebrate Data see: https://data.neonscience.org/data-products/DP1.20120.001
+
+Precipitation Data from WREF terrestrial location see: https://data.neonscience.org/data-products/DP1.00006.001
+
+
+
+-----------------------------------------
+DATA-SPECIFIC INFORMATION FOR: mart.macro.precip.csv
+-----------------------------------------
+
+
+1. Variable List
+
+siteID: Identification of the sampling river.  MART = Martha Creek
+
+date: sampling date in mm/dd/yyyy format 
+	dates are all given in month/day/year (mm/dd/yyyy) format in the .csv file but usually given as yyyy-mm-dd when imported in R
+
+year: sampling year
+
+startTime.UTC: the time in hours:minutes:seconds in the Universal Time Coordinated (UTC) time zone that sampling was started
+
+season: sampling season (Spring, Summer or Fall)
+
+sampleTime: sampling time. Each sampling time is a combition of the season and year, for example Fall 2018 or Summer 2019
+
+habitatType: the type of habitat - which is riffle, pool, or run 
+
+samplerType: the type of sampler used to take the sample, 
+	See more information from NEON.DOC.003046vE 	(https://data.neonscience.org/api/v0/documents/NEON.DOC.003046vE)
+
+		
+	surber - "Surber sampler: Benthic sampler for flowing waters. A standard Surber sampler consists of a 30 cm x 30 cm frame and a long 243 mm Nitex mesh net that collects organisms (Figure 19)." 
+
+	hess - 	"Hess sampler: Benthic sampler for gravel-bottomed streams (Figure 27). Sampler consists of a stainless steel drum fitted with a flow-through collection net. The drum is 33 cm in diameter by 40 cm high, with a 243 mm Nitex mesh net."
+
+
+
+sampleID: unique identification code for each sample.
+	
+
+organism_aggr: the unique name for each organism aggregated for some organisms.	
+	Some species are aggregated into a genus (especially a lot of the mayflies, stoneflies, and caddisflies), family (midges), or class (segmented worms)
+
+acceptedTaxonID: the identification code for each taxon taken from NEON (https://data.neonscience.org/taxonomic-lists)
+
+number: number of organisms of that type for that sample on that day
+
+
+benthicArea: benthic area in meters squared. Calculated as the area of a 0.25 meter squared quadrat times the number of quadrats.
+
+invDens: invertebrate density in number per meter squared. Calculated as the number of a particular organism divided by the benthic area that the organism was sampled in.
+
+acceptedTaxonID: this is a unique identification code for each taxon based on codes from NEON: 
+	https://data.neonscience.org/data-api/endpoints/taxonomy/
+
+tolerance: tolerance for the organism of that type
+	The tolerance is the tolerance to organic pollution used to calculate the Hilsenhof Biotic Index.  Most tolerance values used were
+	taken from the following resources
+	
+	Stream Biomonitoring Unit Staff.  2012. Standard operating Procedure: Biological monitoring of surface waters in New York State.  
+	New York State Department of Environmental Conservation Division of Water.  Albany, NY.
+	
+	Aquatic Bioassessment Laboratory. 2003. List of California macroinvertebrate taxa and standard taxonomic effort. 
+	California Department of Fish and Game. Rancho Cordova, CA.
+	https://www.safit.org/Docs/CABW_std_taxonomic_effort.pdf
+
+FFG: Primary functional feeding group of that organism
+
+	cf - filtering collector 	dominant food: filter feeders or suspension feeders that eat decomposing fine particular matter (FPOM) 
+	cg - gathering collector 	dominant food: gathers or deposit feeds on decomposing fine particular matter (FPOM) (includes surface film feeders)
+	om - omnivore dominant food: eats a variety of things including plant, animal, and detritus	
+	prc - piercer  dominant food: eats by piercing its prey.  
+	prd - predator	dominant food: eats living animal tissue.  Often ingests whole or part of another animal
+	scr - scraper	 dominant food: scrapes periphyton of surfaces (periphyton = algae and associated material attached to rocks and other substrata)
+	sh - shredders 	dominant food: herbivore variety chew and mines live plant material, detritivore variety chews, bores, or gouges decomposing vascular plant 	tissue including wood (course particulate organic matter = CPOM)
+
+
+mon.precip: monthly precipitation
+	total precipitation over 30 day period (including the sampling day) as measured at the WREF terrestrial site 
+	primary precipitation was measured using a Belfort AEPG II 600M weighing gauge 
+	For accrucary see http://belfortinstrument.com/wp-content/uploads/2017/10/Model-AEPG-II-600-1000-All-Environment-Precipitation-Gauge-Data-Sheet-AZ080817.pdf
+	For more information and how to cite the data see https://data.neonscience.org/data-products/DP1.00006.001
+      
+
+2. Missing data codes:
+        Code/symbol     Definition
+	NA        	Not Available
+        
+3. Specialized formats of other abbreviations used
+dates are all given in month/day/year (mm/dd/yyyy) format in the .csv file but usually given as yyyy-mm-dd when imported in R
+
+
+
+
