@@ -1,19 +1,12 @@
 
 # make sure the `readr` package is installed and loaded before you run the code below
-# this code will import the macroinvertebrate data for the Mill River only
-# this file includes the Mill River data from  the Summer and Fall of 2019
-# and includes the macroinvertebrates sampled plus whatever 
-# water quality measurements were made at the same time
-# see the file called mill.macro.waterQ_metadata.txt for details about all these variables and methods
+# this code will import the macroinvertebrate and environmental data for the Mill River 
+# see the file called macro.env_metadata.txt for details about all these variables and methods
 
 # make sure the readr` package is loaded before importing these files
 
-mill.macro.waterQ <- read_csv("data/mill//mill.macro.waterQ.csv",
+macro.env <- read_csv("data/macro.env.csv",
                  col_types = cols(date = col_date(format = "%Y-%m-%d"),
-                  
-                  sampleTime = col_factor(levels=c(
-                    "Summer 2019",
-                    "Fall 2019")),
                   
                   location = col_factor(levels = c(
                     "Downstream","Upstream")), 
@@ -22,3 +15,4 @@ mill.macro.waterQ <- read_csv("data/mill//mill.macro.waterQ.csv",
                   
                   year = col_factor()
                  )) 
+

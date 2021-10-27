@@ -1,10 +1,14 @@
 
 # make sure the `vegan` and 'tidyverse' packages are installed and loaded to run the code below
 
-# data must also be imported before you can run the code below
+# macro and master.taxa data must both be imported before you can run the code below
 
 # remove missing values, and make sure each taxon is summarized within sampleID
-macro.long <- ___ %>%  # replace the blank with the name of the appropriate data frame
+macro.long <- macro %>%  
+  
+  #join taxonomic information 
+  left_join(., master.taxa) %>% 
+  
   dplyr::filter(!is.na(number)) %>% 
   dplyr::select(sampleID, organism_aggr, number) %>% 
   group_by(sampleID, organism_aggr) %>% 
@@ -47,7 +51,7 @@ macro.div <- data.frame(H, effective.sp, sp.rich, max.H, J) %>%
 
 #macro.div at this point only has the sampleID and the diversity measures
 #if you want to add back in some other variables, you can do that using the code below
-mydf <- ___ %>%  #place the name of the original data frame (with all the variables) here
+mydf <- ___ %>%  #place the name of the original data frame (with all the variables of interest included) here
   select(sampleID, ___) %>% #add in the names of any variables you want in the final data
   distinct()
 
