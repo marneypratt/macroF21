@@ -6,16 +6,15 @@
 
 ggplot(
   data = ___,   #put the data frame name here
-  aes(x = ___, y = ___, fill = ___)) +  
-  geom_quasirandom(
-    aes(x= ___, y = ___, fill = ___), 
+  aes(x = ___, y = ___, fill = ___, color = ___)) +  
+  geom_quasirandom( 
     shape=21, size=2, alpha = 0.5, width=0.2, #play with these values as needed
     dodge.width = 1) + #adjust the dodge width as needed
   stat_summary(fun = median, 
                fun.min = median, 
                fun.max = median, #change median to mean if desired
                geom = "crossbar", na.rm = TRUE,
-               width = 0.5, size = 0.75, #play with these values as needed
+               width = 0.4, size = 0.75, #play with these values as needed
                color = "black",
                position=position_dodge(width=1)) + #match this width to dodge.width above
   ylab("___") +
