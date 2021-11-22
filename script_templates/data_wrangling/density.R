@@ -16,8 +16,10 @@ macro.density <- ___ %>% #replace blank with data frame name
   # density of ALL macroinvertebrates
   # replace blank in the group_by function with grouping variables as needed 
   # such as season, location, year, etc
-  group_by(sampleID, organism_aggr, ___) %>% 
-  dplyr::summarise (density = sum(invDens, na.rm = TRUE)) %>% 
-  filter(organism_aggr == "___") #put the type of organism you want to keep here (remove this line and pipe above if you want all macros)
+  # if you want a specific group of organisms, add that column name into 
+  #the list of grouping variables (family, organism_aggr, etc)
+  #then filter for the organism or group you want
+  group_by(sampleID, ___) %>% 
+  dplyr::summarise (density = sum(invDens, na.rm = TRUE)) 
 
 
