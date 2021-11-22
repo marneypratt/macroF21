@@ -11,7 +11,12 @@ macro.ffg <- ___ %>% #replace blank with data frame name
   # Sum FFG for each sampleID 
   #replace blank with grouping variables as needed such as season, location, year, etc
   group_by(sampleID, FFG, ___) %>% 
-  dplyr::summarise (num.ffg = sum(number, na.rm = TRUE))
+  dplyr::summarise (num.ffg = sum(number, na.rm = TRUE)) %>% 
+  
+  #adds back the zeros for FFGs that were not present in a sample
+  #repeat all the grouping variables as above
+  ungroup %>%
+  complete(sampleID, FFG, ___, fill = list(num.ffg = 0)) 
 
 
 ###sum the total number of all organisms for each sample
